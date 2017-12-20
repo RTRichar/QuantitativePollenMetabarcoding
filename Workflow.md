@@ -1,4 +1,4 @@
-# Database Curation and Classifier Training
+## Database Curation and Classifier Training
 ##### Download all rbcL, trnL, trnH and whole chloroplast sequences from NCBI Genbank
 ##### Download all Viridiplantae and Rhodophyta ITS2 sequences from the ITS2 Database
 ##### Remove next line entries from sequences.
@@ -63,13 +63,13 @@ python Python_script_3.py taxonomies.txt
 ```
 perl ~/PATH/TO/Metaxa2_2.2/metaxa2_dbb -o DATABASE_NAME -g GENE_NAME -t taxonomies.tax –i input.fasta -r 83700918
 ```
-# Classifier Evaluations
-##### For evaluation of classifier performance, the methods described in Richardson et al. 2017 were used (DOI: 10.1111/1755-0998.12628)
+## Classifier Evaluations
+##### For evaluation of classifier performance, the methods described in Richardson et al. 2017 were used (DOI: 10.1111/1755-0998.12628; https://github.com/RTRichar/evaluating-DNA-metabarcoding)
 ###### For this section of the methods, Python_script_4.py is needed to crop reference sequences to 150 bp. 
 ```
 python Python_script_4.py file.fasta 150 output.fasta
 ```
-# Classification and Analysis of Multi-locus Pollen Metabarcoding Data
+## Classification and Analysis of Multi-locus Pollen Metabarcoding Data
 ##### Use Metaxa2 to classify sequences.
 ```
 perl ~/PATH/TO/Metaxa2_2.2/metaxa2 -1 forward_reads.fasta -2 reverse_reads.fasta -o output_name -g DATABASE_NAME -E 1e-40 -R 50
