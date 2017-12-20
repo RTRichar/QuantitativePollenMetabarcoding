@@ -58,6 +58,14 @@ cat taxonomies_2.tax | perl -pe 's/s__x\s.*//' | sed '/environmental\ssample/d' 
 ```
 python Python_script_3.py taxonomies.txt
 ```
+##### Remove duplicate sequences from each reference database
+###### For this step, sequence headers must contain the taxonomic lineage of the entry, which can be done using a Perl script from Sickel et al. (2016)
+
+```
+perl ~/PATH/TO/RDP_Akenbrand/meta-barcoding-dual-indexing/code/tax2rdp_utax.pl MarkerName.tax MarkerName.fasta MarkerName
+
+java -Xmx4g -jar /PATH/TO/RDP_Akenbrand/rdp_classifier_2.11/dist/classifier.jar rm-dupseq --infile MarkerName.rdp.fa --outfile MarkerName.rmDS.fasta --duplicates --min_seq_length 50
+```
 ##### Perform final Metaxa2 database construction using the curated sequence and taxonomy information 
 ###### For rbcL and trnL, the same representative sequences shown previously were used to indicate the exact barcode region of interest. For the highly divergent trnH and ITS2 markers, the ‘-r’ option was not used and the ‘--divergent’ option was set to ‘T’.
 ```
