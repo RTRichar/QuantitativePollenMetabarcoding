@@ -78,6 +78,10 @@ perl ~/PATH/TO/Metaxa2_2.2/metaxa2_dbb -o DATABASE_NAME -g GENE_NAME -t taxonomi
 python Python_script_4.py file.fasta 150 output.fasta
 ```
 ## Classification and Analysis of Multi-locus Pollen Metabarcoding Data
+##### Trim sequences by quality
+```
+java -jar /PATH/TO/Trimmomatic-0.32/trimmomatic-0.32.jar SE input.fastq output_trimmed.fastq MINLEN:100 TRAILING:20
+```
 ##### Use Metaxa2 to classify sequences.
 ```
 perl ~/PATH/TO/Metaxa2_2.2/metaxa2 -1 forward_reads.fasta -2 reverse_reads.fasta -o output_name -g DATABASE_NAME -E 1e-40 -R 50
