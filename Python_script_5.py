@@ -6,7 +6,7 @@
 
 # script has to be run in the same directory as MTXA2 output files and all files need to have the same naming convention (sampleID.MarkerName.taxonomy.txt, with sampleIDs being identical to those provided in sys.argv[1] and MarkerName being identical to those provided in sys.argv[2])
 
-from __future__ import division # for decimals, not sure if needed
+from __future__ import division # for decimals
 import re # for regular expressions
 import sys # standard input/output
 import numpy
