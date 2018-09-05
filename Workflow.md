@@ -83,7 +83,7 @@ python Python_script_4.py file.fasta 150 output.fasta
 perl ~/PATH/TO/Metaxa2_2.2/metaxa2 -1 forward_reads.fastq -2 reverse_reads.fastq -o output_name -g DATABASE_NAME -R 50
 ```
 ##### use Python_script_5 to consensus filter the classifications, returning only the families detected in at least two of the four libraries per sample, and calculate the median proportion of each consensus family across the four libraries
-###### In this analysis, the median proportion is calculated from only the libraries in which the family was detected (i.e. zeros are excluded). The files must be named according to the following convention: *'sample_name.marker_name.taxonomy.txt'*. There can be no periods in the sample or marker names as the period is used to delimit *sample* from *marker*. Further a *‘base_names.txt’* file containing all of the sample names must be designated. Lastly, a *‘markers.txt’* containing the name of each marker used, must be designated. 
+###### In this analysis, the median proportion is calculated from only the libraries in which the family was detected (i.e. zeros are excluded). The files must be named according to the following convention: *'sample_name.marker_name.taxonomy.txt'*. There can be no periods in the sample or marker names as the period is used to delimit *sample* from *marker*. A *‘base_names.txt’* file containing all of the sample names must be designated. Lastly, a *‘markers.txt’* containing the name of each marker used, must be designated. 
 ```
 python Analyze_Multi-Locus.py -b base_names.txt -m marker_names.txt -pf pre-filter_threshold -mt masking_threshold -o output_name.csv
 ```
