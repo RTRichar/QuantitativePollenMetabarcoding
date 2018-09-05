@@ -78,16 +78,12 @@ perl ~/PATH/TO/Metaxa2_2.2/metaxa2_dbb -o DATABASE_NAME -g GENE_NAME -t taxonomi
 python Python_script_4.py file.fasta 150 output.fasta
 ```
 ## Classification and Analysis of Multi-locus Pollen Metabarcoding Data
-##### Trim sequences by quality
-```
-java -jar /PATH/TO/Trimmomatic-0.32/trimmomatic-0.32.jar SE input.fastq output_trimmed.fastq MINLEN:100 TRAILING:20
-```
 ##### Use Metaxa2 to classify sequences.
 ```
-perl ~/PATH/TO/Metaxa2_2.2/metaxa2 -1 forward_reads.fasta -2 reverse_reads.fasta -o output_name -g DATABASE_NAME -E 1e-40 -R 50
+perl ~/PATH/TO/Metaxa2_2.2/metaxa2 -1 forward_reads.fastq -2 reverse_reads.fastq -o output_name -g DATABASE_NAME -R 50
 ```
 ##### use Python_script_5 to consensus filter the classifications, returning only the families detected in at least two of the four libraries per sample, and calculate the median proportion of each consensus family across the four libraries
-###### In this analysis, the median proportion is calculated from only the libraries in which the family was detected (i.e. zeros are excluded). This script must be run in the directory containing the classifier results of each library. Additionally, the libraries must be named according to the following convention: *'sample_name.marker_name.taxonomy.txt'*. There can be no periods in the sample or marker names. Further a *‘base_names.txt’* file containing all of the sample names must be designated. Lastly, a *‘markers.txt’* containing the name of each marker used, must be designated. 
+###### In this analysis, the median proportion is calculated from only the libraries in which the family was detected (i.e. zeros are excluded). The files must be named according to the following convention: *'sample_name.marker_name.taxonomy.txt'*. There can be no periods in the sample or marker names as the period is used to delimit *sample* from *marker*. Further a *‘base_names.txt’* file containing all of the sample names must be designated. Lastly, a *‘markers.txt’* containing the name of each marker used, must be designated. 
 ```
-python Python_script_5.py base_names.txt markers.txt 0.0001 0.025 output.txt
+python Analyze_Multi-Locus.py -b base_names.txt -m marker_names.txt -pf pre-filter_threshold -mt masking_threshold -o output_name.csv
 ```
