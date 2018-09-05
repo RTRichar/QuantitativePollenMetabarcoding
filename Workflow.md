@@ -6,7 +6,7 @@ trnL[All Fields] AND ("1900/01/01"[PDAT] : "2017/04/29"[PDAT])
 trnH[All Fields] AND ("1900/01/01"[PDAT] : "2017/04/29"[PDAT]) 
 chloroplast[All Fields] AND genome[All Fields] AND ("1900/01/01"[PDAT] : "2017/04/20"[PDAT]) AND (plants[filter] AND chloroplast[filter] AND ("1900/01/01"[PDAT] : "2017/04/20"[PDAT]))
 ```
-##### Download all Viridiplantae and Rhodophyta ITS2 sequences from the ITS2 Database
+##### Download all Viridiplantae and Rhodophyta ITS2 sequences from the ITS2 Database, including partial sequences
 ##### Remove next line entries from sequences.
 ```
 awk '/^>/ {printf("\n%s\n",$0);next; } { printf("%s",$0);}  END {printf("\n");}' < GenBank_rbcL_030416.fasta > GenBank_rbcL_030416_rmNextLine.fasta 
