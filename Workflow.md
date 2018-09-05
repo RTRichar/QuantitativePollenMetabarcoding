@@ -1,5 +1,11 @@
 ## Database Curation and Classifier Training
-##### Download all rbcL, trnL, trnH and whole chloroplast sequences from NCBI Genbank
+##### Download all rbcL, trnL, trnH and whole chloroplast sequences from NCBI Genbank using the following search terms
+```
+rbcL[All Fields] AND (("100"[SLEN] : "20000"[SLEN]) AND ("1900/01/01"[PDAT] : "2017/04/29"[PDAT]))
+trnL[All Fields] AND ("1900/01/01"[PDAT] : "2017/04/29"[PDAT])
+trnH[All Fields] AND ("1900/01/01"[PDAT] : "2017/04/29"[PDAT]) 
+chloroplast[All Fields] AND genome[All Fields] AND ("1900/01/01"[PDAT] : "2017/04/20"[PDAT]) AND (plants[filter] AND chloroplast[filter] AND ("1900/01/01"[PDAT] : "2017/04/20"[PDAT]))
+```
 ##### Download all Viridiplantae and Rhodophyta ITS2 sequences from the ITS2 Database
 ##### Remove next line entries from sequences.
 ```
