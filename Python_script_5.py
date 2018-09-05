@@ -34,12 +34,9 @@ mfile = open(args.MarkerNames, 'r') # markers
 pfilt_thresh = float(args.PreFilterThreshold)
 msk_thresh = float(args.MaskThreshold) # Taxanomic groups are masked into 'other' category if their abundance is below this threshold
 MedOutName = str(args.OutPutPrefix + '_Med_' + Ranks[int(args.Rank)] + 'Pf' + args.PreFilterThreshold + 'Mt' + args.MaskThreshold + '.csv')
-#print pfilt_thresh, msk_thresh
 
 markers = mfile.read().splitlines() # make list of markers used in study
 samples = ifile.read().splitlines() # make list of base names of samples
-#print markers
-#print samples
 
 ### Section 1.) make a dictionary with each key being the sample name and each value being a list of marker files for the sample key
 Sample_Sets_Dct = {}
