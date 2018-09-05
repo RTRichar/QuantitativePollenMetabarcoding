@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
---$ python Analyze_Multi-Locus.py -b base_names.txt -m marker_names.txt -pf pre-filter_threshold -mt masking_threshold -o output_name.csv
+--$ python Analyze_Multi-Locus.py -b base_names.txt -m marker_names.txt -pf pre-filter_threshold -mt masking_threshold -o output_name.csv -r 4
 
 This script takes the following inputs: (1) an input file containing the base names for each sample; (2) a file of the markers used, one marker per line; (3) a protortional threshold, between 0 and 1, indicating the minimum proportional threshold for a family to be considered present in the sample; (4) a protortional threshold, between 0 and 1, indicating the median proportional abundance a taxonomic group needs to be represented by in order to be included in the final output (e.g. 0.05 means that any taxon below 5% abundance will be excluded); (5) output file name
 
